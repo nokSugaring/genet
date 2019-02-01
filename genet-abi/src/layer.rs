@@ -287,6 +287,12 @@ impl<T> Deref for LayerType<T> {
     }
 }
 
+impl<T> DerefMut for LayerType<T> {
+    fn deref_mut(&mut self) -> &mut T {
+        &mut self.field
+    }
+}
+
 impl<T> AsRef<Fixed<LayerClass>> for LayerType<T> {
     fn as_ref(&self) -> &Fixed<LayerClass> {
         &self.layer
